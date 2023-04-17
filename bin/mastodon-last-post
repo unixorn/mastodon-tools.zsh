@@ -30,7 +30,6 @@ function has() {
 }
 
 function checkdeps() {
-  # shellcheck disable=SC2041
   for dep in 'curl' 'jq'
   do
     if ! has "$dep"; then
@@ -66,14 +65,8 @@ fi
 checkdeps
 
 jsondata=$(raw_user_info "$@")
-followers=$(echo "$jsondata" | jq .followers_count)
-following=$(echo "$jsondata" | jq .following_count)
-created_at=$(echo "$jsondata" | jq .created_at | sed 's/"//g')
 display_name=$(echo "$jsondata" | jq .display_name | sed 's/"//g')
 last_post=$(echo "$jsondata" | jq .last_status_at | sed 's/"//g')
 
 echo "$display_name"
-echo "Account Creation Date: $created_at"
 echo "Last post: $last_post"
-echo "Followers: $followers"
-echo "Following: $following"
