@@ -31,5 +31,6 @@ FEDIVERSE_HOME='https://hachyderm.io'
 
 | Script | Original Source | Description |
 | ------ | --------------- | ----------- |
+| `mastodon-last-post` | Here | Shows when the user last posted. Requires that their home server allows unauthenticated API read access. |
 | `mastodon-summary` | Here | Prints a quick summary of a given mastodon user. Requires that their home server allows unauthenticated API read access. |
 | `mastodon-user-profile` | Here | Uses macOS `open` command to open browser pages for the given fediverse users on your server so you can easily follow them. |
